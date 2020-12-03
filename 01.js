@@ -1,3 +1,5 @@
+const fs = require('fs');
+
 function two_sum(sum, arr) {
     u = new Map()
     for (const x of arr) {
@@ -19,9 +21,20 @@ function three_sum(sum, arr) {
             return [x, a, b];
         }
     }
+    return [undefined, undefined, undefined];
+}
+
+function solve() {
+    const inp = fs.readFileSync('input/01.txt', 'utf-8')
+        .split('\n')
+        .map(Number)
+
+    console.log(two_sum(2020, inp).reduce((x, y) => x*y));
+    console.log(three_sum(2020, inp).reduce((x, y) => x*y));
 }
 
 module.exports = {
     two_sum,
-    three_sum
+    three_sum,
+    solve
 };

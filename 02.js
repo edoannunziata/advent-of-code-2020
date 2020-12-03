@@ -1,3 +1,5 @@
+const fs = require('fs');
+
 function valid_part1(inp) {
     let count = 0;
     for (const [lim, char, pw] of [...inp.map(u => u.split(" "))]) {
@@ -23,7 +25,16 @@ function valid_part2(inp) {
     return count;
 }
 
+function solve() {
+    const inp = fs.readFileSync('input/02.txt', 'utf-8')
+        .split('\n');
+
+    console.log(valid_part1(inp));
+    console.log(valid_part2(inp));
+}
+
 module.exports = {
     valid_part1,
     valid_part2,
+    solve
 };
