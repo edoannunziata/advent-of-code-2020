@@ -1,7 +1,7 @@
 const fs = require('fs');
-const dayFour = require('./04')
+const dayFive = require('./05');
 
-const inp = fs.readFileSync('input/04.txt', 'utf-8')
+const inp = fs.readFileSync('input/05.txt', 'utf-8')
     .split('\n')
 
-dayFour.solve();
+dayFive.solve();
